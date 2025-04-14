@@ -1,0 +1,1 @@
+# Automatic-annotation-of-African-images
