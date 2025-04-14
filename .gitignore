@@ -1,0 +1,9 @@
+# Ignorer les fichiers de l'environnement virtuel
+venv/
+
+# Ignorer les fichiers générés
+*.csv
+african_data_collector/storage/
+annotations/storage/
+# Ignorer les fichiers de configuration sensibles
+.env
