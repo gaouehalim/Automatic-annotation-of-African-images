@@ -20,10 +20,37 @@ class ImageCollector:
             writer.writerow(['filename', 'description', 'image_url', 'category'])
             for term in self.search_terms:
                 print(f"Recherche de : {term}")
-                url = f'https://api.unsplash.com/search/photos?query={term}&per_page={self.images_per_term}&client_id={self.access_key}'
-                response = requests.get(url)
-                data = response.json()
-                self._process_images(data, term, writer)
+                # On définit le nombre total d'images à récupérer
+                total_images = self.images_per_term
+                images_collected = 0
+                page = 1
+
+                while images_collected < total_images:
+                    url = f'https://api.unsplash.com/search/photos?query={term}&per_page=30&page={page}&client_id={self.access_key}'
+                    response = self._get_request(url)
+                    if response:
+                        data = response.json()
+                        self._process_images(data, term, writer)
+                        images_collected += len(data['results'])
+                        page += 1
+                    else:
+                        break
+
+    def _get_request(self, url):
+        try:
+            response = requests.get(url)
+            if response.status_code == 200:
+                return response
+            elif response.status_code == 403:
+                print("🔴 API Rate Limit Exceeded. Waiting for 1 minute.")
+                time.sleep(60) 
+                return self._get_request(url)
+            else:
+                print(f"❌ Failed to fetch data. Status Code: {response.status_code}")
+                return None
+        except requests.exceptions.RequestException as e:
+            print(f"❌ Request failed: {e}")
+            return None
 
     def _process_images(self, data, category, writer):
         for i, img in enumerate(data.get('results', [])):
@@ -36,5 +63,8 @@ class ImageCollector:
             print(f"✅ Image {filename} enregistrée.")
 
     def _download_image(self, img_url, filepath):
-        with open(filepath, 'wb') as img_file:
-            img_file.write(requests.get(img_url).content)
+        try:
+            with open(filepath, 'wb') as img_file:
+                img_file.write(requests.get(img_url).content)
+        except requests.exceptions.RequestException as e:
+            print(f"❌ Failed to download image: {e}")
