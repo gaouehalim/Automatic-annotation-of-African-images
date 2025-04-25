@@ -54,7 +54,7 @@ def show_about():
     ## 📊 Résultats clés
 
     - **Nombre total d'images** : 1947
-    - **Taux moyen de similarité** : *(à compléter avec ton vrai score moyen)*
+    - **Taux moyen de similarité** : environ 0.46/1.00 selon ma dernière évaluation.
     - **Tendances observées** :
         - Très bonnes annotations sur les **paysages naturels** et **scènes urbaines simples**.
         - Difficultés sur les **contextes culturels fins** (festivals, vêtements traditionnels).
