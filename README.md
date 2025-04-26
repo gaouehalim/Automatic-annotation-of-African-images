@@ -39,7 +39,7 @@ app/
 
 requirements.txt              # Dépendances du projet
 README.md                     # Présentation du projet
-
+```
 ---
 
 ## 🛠️ Outils et technologies utilisés
