@@ -18,8 +18,6 @@ L'objectif est de **réduire le biais culturel** dans les datasets d'images, en 
 
 ## 🏛️ Structure du projet
 
-## 🏛️ Structure du projet
-
 ```bash
 african_data_collector/
 ├── data_collection.py       # Collecte d'images via l'API Unsplash
