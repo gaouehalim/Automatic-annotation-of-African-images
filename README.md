@@ -18,7 +18,22 @@ L'objectif est de **réduire le biais culturel** dans les datasets d'images, en 
 
 ## 🏛️ Structure du projet
 
-├── african_data_collector/ │ ├── data_collection.py → collecte d'images via API Unsplash │ ├── data_cleaning.py → nettoyage et formatage des données collectées │ ├── data_analysis.py → analyse statistique du dataset │ ├── fusion.py → fusion et préparation finale du dataset ├── annotation/ │ └── blip2_annotator/ │ └── blip2_annotator.py → annotation automatique avec BLIP-2 ├── evalution/ │ └── compare_annotations_bert.ipynb → évaluation de la similarité sémantique ├── app/ │ ├── main.py → application Streamlit │ ├── modules/ → pages du dashboard (dashboard, upload, about) │ ├── data/ → résultats finaux (annotations + scores) ├── requirements.txt → dépendances ├── README.md
+├── african_data_collector/ │
+  ├── data_collection.py → collecte d'images via API Unsplash │ 
+  ├── data_cleaning.py → nettoyage et formatage des données collectées │ 
+  ├── data_analysis.py → analyse statistique du dataset │
+  ├── fusion.py → fusion et préparation finale du dataset
+├── annotation/ │
+  └── blip2_annotator/ │ 
+      └── blip2_annotator.py → annotation automatique avec BLIP-2 
+├── evalution/ │
+  └── compare_annotations_bert.ipynb → évaluation de la similarité sémantique
+├── app/ │ 
+  ├── main.py → application Streamlit │ 
+  ├── modules/ → pages du dashboard (dashboard, upload, about) │ 
+  ├── data/ → résultats finaux (annotations + scores) 
+├── requirements.txt → dépendances 
+├── README.md
 
 
 ---
