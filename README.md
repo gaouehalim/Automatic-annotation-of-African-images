@@ -18,22 +18,26 @@ L'objectif est de **réduire le biais culturel** dans les datasets d'images, en 
 
 ## 🏛️ Structure du projet
 
-├── african_data_collector/ │
-  ├── data_collection.py → collecte d'images via API Unsplash │ 
-  ├── data_cleaning.py → nettoyage et formatage des données collectées │ 
-  ├── data_analysis.py → analyse statistique du dataset │
-  ├── fusion.py → fusion et préparation finale du dataset
-├── annotation/ │
-  └── blip2_annotator/ │ 
-      └── blip2_annotator.py → annotation automatique avec BLIP-2 
-├── evalution/ │
-  └── compare_annotations_bert.ipynb → évaluation de la similarité sémantique
-├── app/ │ 
-  ├── main.py → application Streamlit │ 
-  ├── modules/ → pages du dashboard (dashboard, upload, about) │ 
-  ├── data/ → résultats finaux (annotations + scores) 
-├── requirements.txt → dépendances 
-├── README.md
+├── african_data_collector/
+│   ├── data_collection.py       # Collecte d'images via l'API Unsplash
+│   ├── data_cleaning.py          # Nettoyage et formatage des données collectées
+│   ├── data_analysis.py          # Analyse statistique du dataset
+│   ├── fusion.py                 # Fusion et préparation finale du dataset
+│
+├── annotation/
+│   └── blip2_annotator/
+│       └── blip2_annotator.py    # Annotation automatique avec BLIP-2
+│
+├── evaluation/
+│   └── compare_annotations_bert.ipynb   # Évaluation de la similarité sémantique avec BERT
+│
+├── app/
+│   ├── main.py                   # Application Streamlit
+│   ├── modules/                  # Pages du dashboard (dashboard, upload, about)
+│   ├── data/                     # Résultats finaux (annotations + scores)
+│
+├── requirements.txt              # Dépendances du projet
+├── README.md                     # Présentation du projet
 
 
 ---
